@@ -2,21 +2,21 @@
 #include <stdlib.h>
 #include <string>
 
-using namespace std;
+// Create a simple program that will take input and output of name, age, and username
 
 int main(){
-	string name, age, username;
+	std::string name, age, username;
 
-	cout<<"Input your name"<<endl;
-	cin>>name;
-	cout<<endl<<"Input your age"<<endl;
-	cin>>age;
-	cout<<endl<<"Input your username"<<endl;
-	cin>>username;
+	std::cout<<"Input your name"<<"\n";
+	std::cin>>name;
+	std::cout<<"\n"<<"Input your age"<<"\n";
+	std::cin>>age;
+	std::cout<<"\n"<<"Input your username"<<"\n";
+	std::cin>>username;
 
-	cout << "Your name is " << name << ", "
+	std::cout << "Your name is " << name << ", "
 		<< "Your age is " << age << ", "
-		<< "and your username is " << username << "!" << endl;
+		<< "and your username is " << username << "!" << "\n";
 	system("PAUSE");
 	return 0;
 }
