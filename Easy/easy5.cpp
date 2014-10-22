@@ -1,5 +1,5 @@
 // reddit.com/r/dailyprogrammer
-// Easy challenge #5
+// Easy challenge #5 (Requires the use of a "login" text file)
 // Create a program that requires a username and password to open
 // Optional: Requests the information from a .txt file
 
