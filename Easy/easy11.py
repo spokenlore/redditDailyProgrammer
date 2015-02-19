@@ -12,6 +12,7 @@ def main():
 	8:"August", 9:"September", 10:"October", 11:"November", 12:"December"}
 
 	year = int(raw_input("Input a year (as a number).\n"))
+
 	while True:
 		month = int(raw_input("Input a month (as a number).\n"))
 		if month >= 1 and month <= 12:
