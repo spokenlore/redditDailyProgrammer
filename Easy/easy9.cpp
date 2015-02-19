@@ -8,22 +8,38 @@
 #include <iostream>
 #include <stdlib.h>
 #include <string>
-#include <fstream>
+#include <cstdio>
+
+using namespace std;
+
+string bubbleSort(string);
 
 int main(){
 	std::string inputString;
 	std::string arr[50];
 	int i = 0;
-	std::cout << "Please enter strings (up to 50) \n"
-		<< "Or enter 'exit' to denote completion";
-	while (i < 50 and inputString != "exit"){
-		std::cin >> inputString;
+	std::cout << "Please enter strings\n"
+		<< "Enter 'exit' to exit the program \n"
+		<< "Enter 'finished' to begin sorting \n";
+	while (std::cin >> inputString){
+		if (inputString == "exit")
+			exit(1);
+		if (inputString == "finished")
+			{
+			std::cout << i;
+			break;
+		}
 		arr[i] = inputString;
 		i++;
 	}
+	
 	std::cout << "\n";
-	for (int j = 0; j < i; j++){
-		for (int iterator = 0; iterator < i; i++){
+	int numElements = i;
+	for (int a = 0; a < i; a++){
+		arr[a] = bubbleSort(arr[a]);
+	}
+	for (int j = 0; j < numElements; j++){
+		for (int iterator = 0; iterator < i; iterator++){
 			if (arr[iterator] > arr[iterator+1]){
 				std::string x;
 				x = arr[iterator+1];
@@ -32,10 +48,26 @@ int main(){
 			}
 		}
 	}
-	for (int k = 0; k < i; k++){
+	
+	for (int k = 0; k <= i; k++){
 		std::cout << arr[k] << " ";
 	}
 	std::cout << "\n";
 	system("PAUSE");
 	return 0;
+}
+
+string bubbleSort(string sortString){
+	char temp;
+	for (int i = 0; i < sortString.length(); i++){
+		for (int j = 0; j <= sortString.length(); j++){
+			if (sortString[j] > sortString[j+1] and j < sortString.length() - 1){
+				temp = sortString[j+1];
+				sortString[j+1] = sortString[j];
+				sortString[j] = temp;
+				// cout << sortString << '\n';
+			}
+		}
+	}
+	return sortString;
 }
